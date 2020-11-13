@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package examen1_alejandroosorto;
 
 /**
@@ -11,7 +6,6 @@ package examen1_alejandroosorto;
  */
 public class Armas
 {
-    private int tipoArma;
     private String tipoArmaS; //Para mostrar en toString
     private double porcentajeDaño;
 
@@ -19,45 +13,13 @@ public class Armas
     {
     }
 
-    public Armas(int tipoArma, double porcentajeDaño)
+    public Armas(String tipoArmaS, double porcentajeDaño)
     {
-        this.tipoArma = tipoArma;
+        this.tipoArmaS = tipoArmaS;
         this.porcentajeDaño = porcentajeDaño;
     }
+
     
-    public void setTipoArma(int tipoArma)
-    {
-        this.tipoArma = tipoArma;
-        switch (tipoArma)
-        {
-            case 1:
-            {
-                tipoArmaS = "Hacha";
-            } break;
-            case 2:
-            {
-                tipoArmaS = "Pistola";
-            } break;
-            case 3:
-            {
-                tipoArmaS = "Bate";
-            } break;
-            case 4:
-            {
-                tipoArmaS = "Pala";
-            } break;
-            case 5:
-            {
-                tipoArmaS = "Sierra Electrica";
-            } break;
-            case 6:
-            {
-                tipoArmaS = "A Puños";
-            } break;
-            
-        }
-        
-    }
 
     public double getPorcentajeDaño()
     {
