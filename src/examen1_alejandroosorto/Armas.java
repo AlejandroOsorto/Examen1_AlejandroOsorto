@@ -6,16 +6,16 @@ package examen1_alejandroosorto;
  */
 public class Armas
 {
-    private String tipoArmaS; //Para mostrar en toString
+    private String tipoArma;
     private double porcentajeDaño;
 
     public Armas()
     {
     }
 
-    public Armas(String tipoArmaS, double porcentajeDaño)
+    public Armas(String tipoArma, double porcentajeDaño)
     {
-        this.tipoArmaS = tipoArmaS;
+        this.tipoArma = tipoArma;
         this.porcentajeDaño = porcentajeDaño;
     }
 
@@ -33,13 +33,13 @@ public class Armas
 
     public String getTipoArma()
     {
-        return tipoArmaS;
+        return tipoArma;
     }
 
     @Override
     public String toString()
     {
-        return "Tipo de Arma: " + tipoArmaS + "; Porcentaje de Daño: " + porcentajeDaño;
+        return "Tipo de Arma: " + tipoArma + "; Porcentaje de Daño: " + porcentajeDaño;
     }
     
     

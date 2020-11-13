@@ -13,15 +13,14 @@ public class Personas
 {
     private String nombre;
     private int edad;
-    private int sexo;
-    private String sexoS; //Dependerá de la variable entera sexo, solo es para mostrar una cadena en el toString
+    private String sexo;
     private Armas arma;
 
     public Personas()
     {
     }
 
-    public Personas(String nombre, int edad, int sexo, Armas arma)
+    public Personas(String nombre, int edad, String sexo, Armas arma)
     {
         this.nombre = nombre;
         this.edad = edad;
@@ -59,28 +58,20 @@ public class Personas
         this.arma = arma;
     }
 
-    public void setSexo(int sexo)
+    public void setSexo(String sexo)
     {
         this.sexo = sexo;
-        if (sexo == 1)
-        {
-            sexoS = "Masculino";
-        }
-        else if (sexo == 2)
-        {
-            sexoS = "Femenino";
-        }
     }
 
     public String getSexo()
     {
-        return sexoS;
+        return sexo;
     }
 
     @Override
     public String toString()
     {
-        return "Nombre: " + nombre + "; Edad: " + edad + "; Sexo: " + sexoS + "; Arma: " + arma;
+        return "Nombre: " + nombre + "; Edad: " + edad + "; Sexo: " + sexo + "; Arma: " + arma;
     }
     
     
