@@ -1,5 +1,4 @@
 package examen1_alejandroosorto;
-
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -12,6 +11,7 @@ public class Principal extends javax.swing.JFrame
 {
 
     ArrayList lista = new ArrayList();
+    ArrayList listaJasons = new ArrayList();
 
     public Principal()
     {
@@ -101,6 +101,8 @@ public class Principal extends javax.swing.JFrame
         CB_Lista = new javax.swing.JComboBox<>();
         BTN_Eliminar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        T_Lista = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -419,7 +421,7 @@ public class Principal extends javax.swing.JFrame
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 406, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -702,7 +704,7 @@ public class Principal extends javax.swing.JFrame
         );
         ModDatosLayout.setVerticalGroup(
             ModDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 431, Short.MAX_VALUE)
+            .addGap(0, 439, Short.MAX_VALUE)
         );
 
         PanelPrincipal.addTab("Modificar datos", ModDatos);
@@ -745,7 +747,7 @@ public class Principal extends javax.swing.JFrame
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
                 .addComponent(CB_Lista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 349, Short.MAX_VALUE)
                 .addComponent(BTN_Eliminar)
                 .addContainerGap())
         );
@@ -754,15 +756,34 @@ public class Principal extends javax.swing.JFrame
 
         jPanel3.setBackground(new java.awt.Color(170, 131, 55));
 
+        T_Lista.setBackground(new java.awt.Color(163, 153, 124));
+        T_Lista.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][]
+            {
+
+            },
+            new String []
+            {
+                "Vivos", "Muertos", "Jasons"
+            }
+        ));
+        jScrollPane1.setViewportView(T_Lista);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 507, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 431, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PanelPrincipal.addTab("Estadisticas", jPanel3);
@@ -993,6 +1014,10 @@ public class Principal extends javax.swing.JFrame
             double porcentaje = Double.parseDouble(CT_PorcentajeMalo.getText());
 
             Armas arma = new Armas(nombreArma, porcentaje);
+            
+            int cantPersonas = Integer.parseInt(cuadroMatados.getText());
+            
+            listaJasons.add(new El_Yeison_Burpees(cantPersonas, nombre, edad, sexo, arma));
 
             JOptionPane.showMessageDialog(rootPane, "Jason añadido exitosamente >:D");
         }
@@ -1081,6 +1106,7 @@ public class Principal extends javax.swing.JFrame
     private javax.swing.JPanel ModDatos;
     private javax.swing.JTabbedPane PanelPrincipal;
     private javax.swing.JTabbedPane Personas;
+    private javax.swing.JTable T_Lista;
     private javax.swing.JTextField cuadroEdad;
     private javax.swing.JTextField cuadroEdadMalo;
     private javax.swing.JTextField cuadroMatados;
@@ -1118,6 +1144,7 @@ public class Principal extends javax.swing.JFrame
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
 }
